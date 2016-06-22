@@ -39,7 +39,6 @@ function getCoords(event) {
 
 // append the image to $targetArea as an <img/>
 function image(base64Image) {
-    console.log('image appended');
     $targetArea.append('<img src="' + base64Image + '"/>');
 }
 
