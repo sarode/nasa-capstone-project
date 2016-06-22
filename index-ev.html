@@ -1,0 +1,19 @@
+<!--
+EV HTML File
+Built for primary use in a tablet browser (ideally Samsung Galaxy Tab S2 8.0)
+-->
+
+<!DOCTYPE html>
+<html>
+    <title>EV</title>
+    <head>
+        <link rel='stylesheet' href='main-ev.css'>
+  </head>
+  <body>
+      <div id='targetArea' onmousedown='getCoords(event)'></div>
+      <div class='filebutton'><input type='file' id='imagefile' accept='image/*' capture='camera'></div>
+      <script src='https://cdn.socket.io/socket.io-1.2.0.js'></script>
+      <script src='http://code.jquery.com/jquery-1.11.1.js'></script>
+      <script src='main-ev.js'></script>
+  </body>
+</html>
