@@ -9,8 +9,8 @@ var $targetArea = $('#targetArea');
 // listen for 'tap' coming through web socket
 // append a circle to the point that was tapped or clicked
 socket.on('tap', function(location) {
-    $targetArea.empty();
-    $targetArea.append("<div id='finger'></div>")
+    $('#finger').remove();
+    $('#container').append("<div id='finger'></div>")
     var $finger = $('#finger');
     $finger.css({
         left: location.x - $finger.width() / 2 + 'px',
@@ -39,7 +39,11 @@ function getCoords(event) {
 
 // append the image to $targetArea as an <img/>
 function image(base64Image) {
-    $targetArea.append('<img src="' + base64Image + '"/>');
+    $('body').append('<div id="container"><img id="image" onmousedown="getCoords(event)" src="' + base64Image + '"/></div>');
+}
+
+function tapListener() {
+    $('#image').on('mousedown', getCoords(event));
 }
 
 // onload, bind a 'change' event to the 'imageFile' input button
