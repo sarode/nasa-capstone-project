@@ -28,13 +28,13 @@ app.listen(port, '0.0.0.0', function() {
 
 // setup socket listeners on 'connection'
 io.on('connection', function(socket) {
-    socket.on('width', function(data) {
-        io.emit('width', data);
-    });
-    socket.on('user image', function (msg) {
-        socket.broadcast.emit('user image', msg);
+    socket.on('image', function (image) {
+        socket.broadcast.emit('image', image);
     });
     socket.on('tap', function(location) {
         io.emit('tap', location);
+    });
+    socket.on('delete image', function() {
+        io.emit('delete image'); 
     });
 });
